@@ -1,21 +1,31 @@
 import React from 'react';
 import './Node.css';
 
-const Node = ({ cx, cy }) => {
-	// add the 'px' and convert cx, cy to strings
-	var cx_str = cx + 'px';
-	var cy_str = cy + 'px';
+const Node = ({ centX, centY }) => {
+
+	var circRadius = 75;
+
+	// add the 'px' and convert cx, cy and circRadiusto strings
+	var cx_str = (centX-circRadius) + 'px';
+	var cy_str = (centY-circRadius) + 'px';
+	var circRadius_str = circRadius + 'px';
 
 	// overwrite width, height and border-radius styles
-	let circStyles = {
-    	width: cx_str,
-    	height: cy_str,
+	var circStyles = {
+		marginTop: cy_str,
+		marginLeft: cx_str,
+		marginBottom: '0px',
+		marginRight: '0px',
+		padding: '0px',
+    	width: circRadius_str,
+    	height: circRadius_str,
+		borderRadius: '50%',
+		background: 'grey',
 	};
 	
 
 	return (
-		<div className = 'circle' style = {circStyles}>			
-		</div>
+		<circle cx="50" cy="50" r="10"/>
 	);
 }
 
