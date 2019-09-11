@@ -3,28 +3,17 @@ import Node from './Node';
 
 const NodeList = ({ num_nodes }) => {
 
-	// do computations here to get the centers of Node
-	// for now it just uses iterator i in the for loop
-	// MIGHT NEED RADIUS RETURNED FROM THIS FUNCTION
+	// returns center coordinates for nodes given a specific number of nodes
 	function coordinates(num_nodes){
 	    var coords = [];
 
     	var sizeOfWindow = Math.min(window.innerHeight,window.innerWidth);
     	var centerX = sizeOfWindow/2;
     	var centerY = sizeOfWindow/2.75;
-
-    	var degreesInBetween = 360/num_nodes;
-    	//var degree = 90;//start from 90
     	var radius = 175;
 
-    	/*// set coordinate of first point on topmost point of circle
-    	var firstCircle = {
-    		coordX: centerX,
-    		coordY: centerY + radius
-    	};
-    	coords.push(firstCircle);*/
-
-    	for(var i = 0; i<num_nodes ; i++) {//, degree+=degreesInBetween){
+    	for(var i = 0; i<num_nodes ; i++) {
+		// multiplied with 1.5PI makes sure the first circle starts at highest point
         	var coordX = centerX + Math.cos((2 * Math.PI * i / num_nodes) + (1.5*Math.PI))*radius;
         	var coordY = centerY + Math.sin((2 * Math.PI * i / num_nodes) + (1.5*Math.PI))*radius;
         	coords.push({coordX,coordY});
@@ -45,7 +34,7 @@ const NodeList = ({ num_nodes }) => {
 		<div>			
 			<svg width= {window.innerHeight} height= {window.innerHeight}>
 				{list}
-    		</svg>
+    			</svg>
 		</div>
 	);
 }
