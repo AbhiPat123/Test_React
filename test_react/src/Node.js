@@ -3,8 +3,17 @@ import './Node.css';
 
 const Node = ({ centX, centY }) => {
 
-	var circRadius = 75;
+	var circRadius = 40;
 
+	return (
+		<circle cx={centX} cy={centY} r={circRadius.toString()} stroke="black" strokeWidth="3" fill="red" />
+	);
+}
+
+export default Node;
+
+
+/*
 	// add the 'px' and convert cx, cy and circRadiusto strings
 	var cx_str = (centX-circRadius) + 'px';
 	var cy_str = (centY-circRadius) + 'px';
@@ -22,11 +31,4 @@ const Node = ({ centX, centY }) => {
 		borderRadius: '50%',
 		background: 'grey',
 	};
-	
-
-	return (
-		<circle cx="50" cy="50" r="10"/>
-	);
-}
-
-export default Node;
+*/	
