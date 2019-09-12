@@ -3,10 +3,10 @@ import './Node.css';
 
 const Node = ({ centX, centY }) => {
 
-	var circRadius = 40;
+	var nodeRadius = 35;
 
 	return (
-		<circle cx={centX} cy={centY} r={circRadius.toString()} stroke="black" strokeWidth="3" fill="red" />
+		<circle cx={centX} cy={centY} r={nodeRadius.toString()} fill="#8da0cb" />
 	);
 }
 
