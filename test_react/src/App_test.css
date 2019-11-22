@@ -1,0 +1,25 @@
+.square-set,
+.square {
+  border-radius: 15px;
+}
+.square-set {
+  background: darkgrey;
+}
+.square {
+  position: relative;
+  background: Green;
+  height: 70px;
+  line-height: 40px;
+  text-align: center;
+  width: 90px;
+}
+
+.square-1 {
+  position: fixed;
+}
+.square-2 {
+  
+}
+.square-3 {
+  
+}
